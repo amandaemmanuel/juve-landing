@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.usejuve.com"
+        }
+      ],
+      "destination": "https://www.usejuve.ai/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "usejuve.com"
+        }
+      ],
+      "destination": "https://www.usejuve.ai/$1",
+      "permanent": true
+    }
+  ]
+}
