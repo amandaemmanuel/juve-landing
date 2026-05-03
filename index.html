@@ -45,11 +45,16 @@ nav.s{background:var(--cream);border-bottom:3px solid var(--blk)}
 @keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
 /* PHONE */
-.hero-right{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;opacity:0;animation:fu .9s ease .5s forwards}
-.phone-wrap{position:relative}
-.phone{width:270px;height:540px;background:var(--blk);border-radius:44px;border:3.5px solid var(--blk);box-shadow:10px 10px 0 var(--blk);position:relative;overflow:hidden}
-.phone::before{content:'';position:absolute;top:13px;left:50%;transform:translateX(-50%);width:76px;height:20px;background:var(--blk);border-radius:100px;z-index:30}
-.pscreen{position:absolute;inset:0;background:#f8f8f6;border-radius:42px;overflow:hidden}
+.hero-right{position:relative;z-index:2;display:flex;justify-content:center;align-items:center}
+.phone-wrap{position:relative;width:286px;height:574px;opacity:0;animation:fu .9s ease .5s forwards}
+.phone{width:286px;height:574px;background:linear-gradient(145deg,#1a1a1a 0%,#0a0a0a 50%,#1a1a1a 100%);border-radius:50px;box-shadow:10px 10px 0 var(--blk),inset 0 0 0 2px #2a2a2a,inset 0 0 0 4px #0a0a0a;position:relative;overflow:hidden}
+.phone::before{content:'';position:absolute;top:22px;left:50%;transform:translateX(-50%);width:96px;height:28px;background:#000;border-radius:100px;z-index:30;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.pscreen{position:absolute;top:14px;left:8px;right:8px;bottom:14px;width:auto;height:auto;background:#f8f8f6;border-radius:40px;overflow:hidden}
+.phone-btn{position:absolute;background:linear-gradient(180deg,#1a1a1a,#0a0a0a);border-radius:1.5px;z-index:5;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.pb-action{left:-2px;top:96px;width:4px;height:30px}
+.pb-volup{left:-2px;top:148px;width:4px;height:56px}
+.pb-voldn{left:-2px;top:212px;width:4px;height:56px}
+.pb-lock{right:-2px;top:128px;width:4px;height:90px}
 .pslides{display:flex;flex-direction:column;transition:transform .7s cubic-bezier(.4,0,.2,1)}
 .pslide{width:270px;height:540px;flex-shrink:0;overflow:hidden}
 .ps-plan{background:#f8f8f6;padding:44px 16px 16px}
@@ -237,13 +242,13 @@ footer{background:var(--blk);padding:28px 56px;display:flex;justify-content:spac
   .logo{font-size:22px}
 
   /* Hero */
-  .hero{grid-template-columns:1fr;padding:96px 24px 64px;gap:32px;text-align:center}
-  .hero-right{order:-1;justify-content:center}
-  .hero-left{display:flex;flex-direction:column;align-items:center}
-  .h-eye{text-align:center}
-  .h-sub{text-align:center;max-width:480px}
-  .h-ctas{justify-content:center;flex-wrap:wrap;gap:14px}
-  .phone{width:230px;height:460px}
+  .hero{display:flex;flex-direction:column;align-items:center;padding:96px 24px 64px;gap:32px;text-align:center}
+  .hero-left,.hero-right{display:contents}
+  .h-eye{order:1;text-align:center}
+  .h-big{order:2}
+  .phone-wrap{order:3;zoom:.8}
+  .h-sub{order:4;text-align:center;max-width:480px}
+  .h-ctas{order:5;justify-content:center;flex-wrap:wrap;gap:14px}
   .fb1,.fb2{display:none}
 
   /* Sections */
@@ -296,7 +301,7 @@ footer{background:var(--blk);padding:28px 56px;display:flex;justify-content:spac
   .h-sub{font-size:15px}
   .btn-blk{font-size:14px;padding:13px 26px}
   .h-count{font-size:12px}
-  .phone{width:200px;height:400px}
+  .phone-wrap{zoom:.7}
 
   /* Sections */
   .sec{padding:52px 16px}
@@ -372,6 +377,10 @@ footer{background:var(--blk);padding:28px 56px;display:flex;justify-content:spac
 
   <div class="hero-right">
     <div class="phone-wrap">
+      <span class="phone-btn pb-action"></span>
+      <span class="phone-btn pb-volup"></span>
+      <span class="phone-btn pb-voldn"></span>
+      <span class="phone-btn pb-lock"></span>
       <div class="fbadge fb1">
         <span class="fb-ico">&#x1F389;</span>
         <div class="fb-txt">Zero math required<span class="fb-sub">All calculated for you</span></div>
